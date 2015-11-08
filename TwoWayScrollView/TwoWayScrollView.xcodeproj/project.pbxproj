@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FBBAB5841BEF620700A92251 /* ZYTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBAB5831BEF620700A92251 /* ZYTableViewCell.m */; };
 		FBF2D5B61BEA1F1B00C2D158 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF2D5B51BEA1F1B00C2D158 /* main.m */; };
 		FBF2D5B91BEA1F1B00C2D158 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF2D5B81BEA1F1B00C2D158 /* AppDelegate.m */; };
 		FBF2D5BC1BEA1F1B00C2D158 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF2D5BB1BEA1F1B00C2D158 /* ViewController.m */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FBBAB5821BEF620700A92251 /* ZYTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTableViewCell.h; sourceTree = "<group>"; };
+		FBBAB5831BEF620700A92251 /* ZYTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTableViewCell.m; sourceTree = "<group>"; };
 		FBF2D5B11BEA1F1B00C2D158 /* TwoWayScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwoWayScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBF2D5B51BEA1F1B00C2D158 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBF2D5B71BEA1F1B00C2D158 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -105,6 +108,8 @@
 				FBF2D5B81BEA1F1B00C2D158 /* AppDelegate.m */,
 				FBF2D5BA1BEA1F1B00C2D158 /* ViewController.h */,
 				FBF2D5BB1BEA1F1B00C2D158 /* ViewController.m */,
+				FBBAB5821BEF620700A92251 /* ZYTableViewCell.h */,
+				FBBAB5831BEF620700A92251 /* ZYTableViewCell.m */,
 				FBF2D5BD1BEA1F1B00C2D158 /* Main.storyboard */,
 				FBF2D5C01BEA1F1B00C2D158 /* Assets.xcassets */,
 				FBF2D5C21BEA1F1B00C2D158 /* LaunchScreen.storyboard */,
@@ -273,6 +278,7 @@
 			files = (
 				FBF2D5BC1BEA1F1B00C2D158 /* ViewController.m in Sources */,
 				FBF2D5B91BEA1F1B00C2D158 /* AppDelegate.m in Sources */,
+				FBBAB5841BEF620700A92251 /* ZYTableViewCell.m in Sources */,
 				FBF2D5B61BEA1F1B00C2D158 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
