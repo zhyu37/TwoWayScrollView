@@ -41,7 +41,7 @@
 {
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width*self.array.count, self.view.frame.size.height);
     //弹动的效果
-    self.scrollView.bounces = NO;
+    self.scrollView.bounces = YES;
     self.scrollView.pagingEnabled = YES;
     self.scrollView.delegate = self;
     self.scrollView.userInteractionEnabled = YES;
@@ -67,11 +67,17 @@
 {
 //    NSLog(@"scrollViewDidScroll");
     CGPoint point=scrollView.contentOffset;
-//    NSLog(@"%f,%f",point.x,point.y);
-//    NSLog(@"%f %f",point.x, self.view.frame.size.width*(self.array.count-1));
-    if (point.x == self.view.frame.size.width*(self.array.count-1)) {
+    NSLog(@"%f,%f",point.x,point.y);
+    //从最后一个到一个
+    if (point.x == (self.view.frame.size.width*(self.array.count-1)+1)) {
         self.scrollView.contentOffset = CGPointMake(0, 0);
+        NSLog(@"第一个");
     }
+//    //从第一个到最后一个
+//    if (point.x == -1) {
+//        self.scrollView.contentOffset = CGPointMake(self.view.frame.size.width*(self.array.count-1), 0);
+//        NSLog(@"最后一个");
+//    }
 }
 
 #pragma mark - ZYTableViewCellDelegate
