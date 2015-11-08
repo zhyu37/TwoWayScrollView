@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "ZYTableViewCell.h"
 
-@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<UIScrollViewDelegate, UITableViewDelegate, UITableViewDataSource, ZYTableViewCellDelegate>
 //数据
 @property (nonatomic, strong) NSMutableArray *array;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -52,6 +53,7 @@
         table.delegate = self;
         table.dataSource = self;
         table.frame = CGRectMake(self.view.frame.size.width*i, 0, self.view.frame.size.width, self.view.frame.size.height);
+        [table registerClass:[ZYTableViewCell class] forCellReuseIdentifier:[ZYTableViewCell cellReuseIdentifier]];
         [self.scrollView addSubview:table];
     }
     
@@ -63,13 +65,20 @@
 //跑马灯
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"scrollViewDidScroll");
+//    NSLog(@"scrollViewDidScroll");
     CGPoint point=scrollView.contentOffset;
-    NSLog(@"%f,%f",point.x,point.y);
-    NSLog(@"%f %f",point.x, self.view.frame.size.width*(self.array.count-1));
+//    NSLog(@"%f,%f",point.x,point.y);
+//    NSLog(@"%f %f",point.x, self.view.frame.size.width*(self.array.count-1));
     if (point.x == self.view.frame.size.width*(self.array.count-1)) {
         self.scrollView.contentOffset = CGPointMake(0, 0);
     }
+}
+
+#pragma mark - ZYTableViewCellDelegate
+
+- (void)ZYTableViewCell:(ZYTableViewCell *)ZYTableViewCell
+{
+    NSLog(@"11111");
 }
 
 #pragma mark - UITableViewDelegate&UITableViewDataSource
@@ -81,6 +90,12 @@
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (indexPath.row == 1) {
+        ZYTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[ZYTableViewCell cellReuseIdentifier]];
+        cell.delegate = self;
+        cell.contentView.backgroundColor = [UIColor redColor];
+        return cell;
+    }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
